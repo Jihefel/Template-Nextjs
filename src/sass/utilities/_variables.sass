@@ -1,0 +1,12 @@
+@import ~bootstrap/scss/_functions.scss
+@import ~bootstrap/scss/_variables.scss
+
+// COLORS
+$lightgrey: #dddddd
+// END COLORS
+
+// COLORS Bootstrap
+$custom-colors: ('lightgrey': #dddddd)
+
+// Merge the maps
+$theme-colors: map-merge($theme-colors, $custom-colors)
