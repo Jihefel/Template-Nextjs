@@ -1,6 +1,7 @@
 import { useRouter } from "next/router";
 import React from "react";
-import { Card, Accordion } from "react-bootstrap";
+// import { Card, Accordion } from "react-bootstrap";
+import { Card } from "react-materialize";
 
 export default function Corps(props) {
   const planete = props.planeteActuelle;
@@ -11,26 +12,47 @@ export default function Corps(props) {
   }
 
   return (
-    <Card className="text-center">
-      <Card.Header>
-        <Card.Title>{planete.name}</Card.Title>
-      </Card.Header>
-      <Card.Body>
-        <dl>
-          <dt>Masse : </dt>
-          <dd>
-            {planete.mass.massValue}&times;10<sup>{planete.mass.massExponent}</sup> kg
-          </dd>
-          {planete.gravity !== 0.0 ? (
-            <>
-              <dt>Gravité : </dt>
-              <dd>{planete.gravity} N/kg</dd>
-            </>
-          ) : (
-            ""
-          )}
-        </dl>
-      </Card.Body>
+    // <Card className="text-center">
+    //   <Card.Header>
+    //     <Card.Title>{planete.name}</Card.Title>
+    //   </Card.Header>
+    //   <Card.Body>
+    //     <dl>
+    //       <dt>Masse : </dt>
+    //       <dd>
+    //         {planete.mass.massValue}&times;10<sup>{planete.mass.massExponent}</sup> kg
+    //       </dd>
+    //       {planete.gravity !== 0.0 ? (
+    //         <>
+    //           <dt>Gravité : </dt>
+    //           <dd>{planete.gravity} N/kg</dd>
+    //         </>
+    //       ) : (
+    //         ""
+    //       )}
+    //     </dl>
+    //   </Card.Body>
+    // </Card>
+    <Card
+      className="materialize-red center"
+      textClassName="white-text"
+      title={planete.name}
+    >
+      <dl>
+        <dt className="text-bold">Masse : </dt>
+        <dd>
+          {planete.mass.massValue}&times;10
+          <sup>{planete.mass.massExponent}</sup> kg
+        </dd>
+        {planete.gravity !== 0.0 ? (
+          <>
+            <dt>Gravité : </dt>
+            <dd>{planete.gravity} N/kg</dd>
+          </>
+        ) : (
+          ""
+        )}
+      </dl>
     </Card>
   );
 }

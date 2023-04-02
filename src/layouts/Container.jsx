@@ -1,11 +1,11 @@
-import React from 'react'
-import NavBar from '@/components/common/Navbar';
+import React from "react";
+import NavBar from "@/components/common/Navbar";
 
 export default function Container(props) {
   return (
     <>
       <NavBar />
-      {props.children}
+      <div className="container">{props.children}</div>
     </>
-  )
+  );
 }

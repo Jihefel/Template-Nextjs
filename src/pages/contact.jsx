@@ -1,6 +1,9 @@
-import { Button, Form } from "react-bootstrap";
+// import { Button, Form } from "react-bootstrap";
+import { Button, Icon, TextInput } from "react-materialize";
 import Head from "next/head";
 import React, { useState, useEffect, useRef } from "react";
+import { IoMdSend } from "react-icons/io";
+import axios from "axios";
 
 function Contact() {
   const [data, setData] = useState();
@@ -34,21 +37,12 @@ function Contact() {
       email: newEmail.current.value,
     };
 
-    // fetch("/api/contact", {
-    //   method: "POST",
-    //   body: JSON.stringify(newContact),
-    //   headers: {
-    //     "Content-Type": "application/json",
-    //   },
-    // }).then((result) => result.json());
-    // newName.current.value = "";
-    // newPhone.current.value = "";
-    // newEmail.current.value = "";
-
-    axios({
-      method: "post",
-      url: "/api/contact",
+    fetch("/api/contact", {
+      method: "POST",
       body: JSON.stringify(newContact),
+      headers: {
+        "Content-Type": "application/json",
+      },
     }).then((result) => result.json());
     newName.current.value = "";
     newPhone.current.value = "";
@@ -62,8 +56,8 @@ function Contact() {
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Contact</title>
       </Head>
-      <h1 className="text-center">Contact au hasard</h1>
-      <Button className="btn d-block mx-auto" onClick={newContact}>
+      <h1 className="center">Contact au hasard</h1>
+      {/* <Button className="btn d-block mx-auto" onClick={newContact}>
         Random
       </Button>
 
@@ -91,7 +85,33 @@ function Contact() {
         <Button variant="primary" type="submit">
           Submit
         </Button>
-      </Form>
+      </Form> */}
+      <div className="center section">
+        <Button className="deep-purple center pulse" onClick={newContact} waves="purple">
+          Random
+        </Button>
+      </div>
+      <div className="section">
+        <ul>
+          <li>{randomContact?.name}</li>
+          <li>{randomContact?.phone}</li>
+          <li>{randomContact?.email}</li>
+        </ul>
+      </div>
+      <div className="divider"></div>
+
+      <form onSubmit={handleSubmit}>
+        <TextInput id="TextInput-114" label="Name" ref={newName} />
+        <TextInput id="TextInput-1" label="Phone" ref={newPhone} />
+        <TextInput email id="TextInput-127" label="Email" ref={newEmail} />
+
+        <Button node="button" type="submit" waves="orange" className="purple">
+          Submit
+          <Icon right>
+            <IoMdSend />
+          </Icon>
+        </Button>
+      </form>
     </>
   );
 }

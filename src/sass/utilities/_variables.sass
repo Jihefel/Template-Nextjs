@@ -1,12 +1,13 @@
-@import ~bootstrap/scss/_functions.scss
-@import ~bootstrap/scss/_variables.scss
+@import ~materialize-css/sass/components/_variables.scss
+// @import ~bootstrap/scss/_functions.scss
+// @import ~bootstrap/scss/_variables.scss
 
-// COLORS
+// COLORS SASS
 $lightgrey: #dddddd
 // END COLORS
 
-// COLORS Bootstrap
+// // COLORS Materialize
 $custom-colors: ('lightgrey': #dddddd)
 
-// Merge the maps
-$theme-colors: map-merge($theme-colors, $custom-colors)
+// // Merge the maps
+$colors: map-merge($colors, $custom-colors)

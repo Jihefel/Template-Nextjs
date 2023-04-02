@@ -1,10 +1,10 @@
 import Head from "next/head";
 import Link from "next/link";
 import { useRouter } from "next/router";
-import { ListGroup } from "react-bootstrap";
+// import { ListGroup } from "react-bootstrap";
+import { Row, Col, Collection, CollectionItem } from "react-materialize";
 
 export default function Home(props) {
-
   const router = useRouter();
 
   return (
@@ -15,7 +15,7 @@ export default function Home(props) {
         <title>Exo de next pute</title>
       </Head>
 
-      <ListGroup>
+      {/* <ListGroup>
         {props.bodies.map((body) =>
           body.isPlanet === true || body.id === "soleil" ? (
             <ListGroup.Item key={body.id}>
@@ -23,7 +23,22 @@ export default function Home(props) {
             </ListGroup.Item>
           ) : null
         )}
-      </ListGroup>
+      </ListGroup> */}
+      <Row>
+        <Col m={6} s={12}>
+          <Collection>
+            {props.bodies.map((body) =>
+              body.isPlanet === true || body.id === "soleil" ? (
+                <CollectionItem key={body.id}>
+                  <Link href={router.pathname + "/" + body.name.toLowerCase()}>
+                    {body.name}
+                  </Link>
+                </CollectionItem>
+              ) : null
+            )}
+          </Collection>
+        </Col>
+      </Row>
     </>
   );
 }
