@@ -12,27 +12,6 @@ export default function Corps(props) {
   }
 
   return (
-    // <Card className="text-center">
-    //   <Card.Header>
-    //     <Card.Title>{planete.name}</Card.Title>
-    //   </Card.Header>
-    //   <Card.Body>
-    //     <dl>
-    //       <dt>Masse : </dt>
-    //       <dd>
-    //         {planete.mass.massValue}&times;10<sup>{planete.mass.massExponent}</sup> kg
-    //       </dd>
-    //       {planete.gravity !== 0.0 ? (
-    //         <>
-    //           <dt>Gravité : </dt>
-    //           <dd>{planete.gravity} N/kg</dd>
-    //         </>
-    //       ) : (
-    //         ""
-    //       )}
-    //     </dl>
-    //   </Card.Body>
-    // </Card>
     <Card
       className="materialize-red center"
       textClassName="white-text"

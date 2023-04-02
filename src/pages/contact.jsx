@@ -57,35 +57,6 @@ function Contact() {
         <title>Contact</title>
       </Head>
       <h1 className="center">Contact au hasard</h1>
-      {/* <Button className="btn d-block mx-auto" onClick={newContact}>
-        Random
-      </Button>
-
-      <ul>
-        <li>{randomContact?.name}</li>
-        <li>{randomContact?.phone}</li>
-        <li>{randomContact?.email}</li>
-      </ul>
-      <Form onSubmit={handleSubmit}>
-        <Form.Group className="mb-3" controlId="formBasicName">
-          <Form.Label>Name</Form.Label>
-          <Form.Control type="text" placeholder="Complete name" ref={newName} />
-        </Form.Group>
-
-        <Form.Group className="mb-3" controlId="formBasicPhone">
-          <Form.Label>Phone</Form.Label>
-          <Form.Control type="phone" placeholder="Phone" ref={newPhone} />
-        </Form.Group>
-
-        <Form.Group className="mb-3" controlId="formBasicEmail">
-          <Form.Label>Email</Form.Label>
-          <Form.Control type="email" placeholder="Email" ref={newEmail} />
-        </Form.Group>
-
-        <Button variant="primary" type="submit">
-          Submit
-        </Button>
-      </Form> */}
       <div className="center section">
         <Button className="deep-purple center pulse" onClick={newContact} waves="purple">
           Random
