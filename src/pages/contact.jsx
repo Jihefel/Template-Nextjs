@@ -34,25 +34,18 @@ function Contact() {
       email: newEmail.current.value,
     };
 
-    // fetch("/api/contact", {
-    //   method: "POST",
-    //   body: JSON.stringify(newContact),
-    //   headers: {
-    //     "Content-Type": "application/json",
-    //   },
-    // }).then((result) => result.json());
-    // newName.current.value = "";
-    // newPhone.current.value = "";
-    // newEmail.current.value = "";
-
-    axios({
-      method: "post",
-      url: "/api/contact",
+    fetch("/api/contact", {
+      method: "POST",
       body: JSON.stringify(newContact),
+      headers: {
+        "Content-Type": "application/json",
+      },
     }).then((result) => result.json());
     newName.current.value = "";
     newPhone.current.value = "";
     newEmail.current.value = "";
+
+   
   };
 
   return (
